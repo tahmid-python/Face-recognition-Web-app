@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href={% static 'style.css' %}>
+  
+    
+  </head>
+  <body>
+    <div class="main">
+    <div class="register">
+        <h2>Register Here</h2>
+      
+          <form id="survey-form" action="{% url 'regstudent' %}" method="post">
+            {% csrf_token %}
+          <label id="name-label">Name : </label>
+        <br>
+        <input type="text" id="name" name="name"   placeholder="Enter your name" required="required">
+        <br><br>
+    
+        <label id="email-label">Email : </label>
+        <br>
+        <input type="email" id="email" name="email"  placeholder="Enter your email"required="required" >
+        <br><br>
+    
+        <label id="Roll-label">Roll : </label>
+        <br>
+        <input type="number" id="roll" name="roll"  placeholder="Roll Number"min=1 required="required" >
+        <br><br>
+    
+        <label id="crs">Course</label>
+        <br>
+          <select id="dropdown" name="course" required="required">
+            <option disabled selected value>
+              Select your Course
+            </option>
+            <option >
+              Bachelor of Science
+            </option>
+            <option >
+              Masters of Sciences
+            </option>
+            </select>
+            <br><br>
+    
+            <label id="Stream">Department</label>
+            <br>
+            <select id="dropdown" name="strm" required="required">
+              <option disabled selected value>
+                Select your department
+              </option>
+              <option value="CSE">
+                Computer Science & Engineering(CSE)
+              </option>
+              <option value="EEE">
+                Electrical & Electronic Engineering(EEE)
+              </option>
+              <option value="ECE">
+                Electronic & Communication Engineering(ECE)
+              </option>
+              <option value="IT">
+                Information Technology(IT)
+              </option>
+              <option value="ME">
+                Mechanical Engineering(ME)
+              </option>
+              </select>
+              <br><br>
+    
+              <label>Gender : </label>
+              <br>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender"  value="Male" id="male"required="required">
+              &nbsp;
+              <span id="male">Male</span>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender" value="Female" id="female"required="required">
+              &nbsp;
+              <span id="female">Female</span>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender" value="Other" id="other"required="required">
+              &nbsp;
+              <span id="other">Other</span>
+              <br><br>
+
+              <label>year of study : </label>
+              <br>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="year" value="1" id="1"required="required">
+              &nbsp;
+              <span id="1">1st</span>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="year" value="2" id="2" required="required">
+              &nbsp;
+              <span id="2">2nd</span>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="year" id="3" value="3" required="required">
+              &nbsp;
+              <span id="3">3rd</span>
+              &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="year" value="4" id="4"required="required">
+              &nbsp;
+              <span id="4">4th</span>
+              <br><br>
+              <input type="submit" value="Submit to Train Images" name="submit" id="submit" onclick="window.location.href = '{% url 'regstudent' %}' "required="required">
+              <br>
+    
+              <input type="button" id="back" name="back" onclick="window.location.href = '{% url 'landing' %}' " value=" Go Back">
+            </form>
+    
+    
+    </div>
+    </div>
+    
+    </body>
+    
+    </html>
